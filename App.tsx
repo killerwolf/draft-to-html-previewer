@@ -4,44 +4,15 @@ import { EditorPanel } from './components/EditorPanel';
 import { PreviewPanel } from './components/PreviewPanel';
 import { Header } from './components/Header';
 import { SAMPLE_DRAFT_JSON } from './constants';
-
-// Since we are loading draftjs-to-html from a CDN, we need to declare it on the window object for TypeScript.
-declare global {
-    interface Window {
-        draftToHtml: (rawContentState: any, hashtagConfig?: any, directional?: boolean, customEntityTransform?: any) => string;
-    }
-}
+import draftToHtml from 'draftjs-to-html';
 
 const App: React.FC = () => {
     const [jsonInput, setJsonInput] = useState<string>(SAMPLE_DRAFT_JSON);
     const [htmlOutput, setHtmlOutput] = useState<string>('');
     const [error, setError] = useState<string | null>(null);
-    const [isLibraryLoaded, setIsLibraryLoaded] = useState(typeof window.draftToHtml === 'function');
-
-    // Effect to check for the library loading
-    useEffect(() => {
-        if (isLibraryLoaded) {
-            return;
-        }
-
-        const intervalId = window.setInterval(() => {
-            if (typeof window.draftToHtml === 'function') {
-                setIsLibraryLoaded(true);
-                clearInterval(intervalId);
-            }
-        }, 100);
-
-        return () => clearInterval(intervalId);
-    }, [isLibraryLoaded]); // This effect runs once until the library is loaded.
 
     // Effect to perform the conversion
     useEffect(() => {
-        if (!isLibraryLoaded) {
-            setError("Editor library is loading...");
-            setHtmlOutput('');
-            return;
-        }
-
         if (!jsonInput.trim()) {
             setHtmlOutput('');
             setError(null);
@@ -55,7 +26,7 @@ const App: React.FC = () => {
                 throw new Error("Invalid Draft.js structure. Missing 'blocks' array.");
             }
 
-            const convertedHtml = window.draftToHtml(parsedJson);
+            const convertedHtml = draftToHtml(parsedJson);
             setHtmlOutput(convertedHtml);
             setError(null);
         } catch (e) {
@@ -66,7 +37,7 @@ const App: React.FC = () => {
             }
             setHtmlOutput('');
         }
-    }, [jsonInput, isLibraryLoaded]); // Re-run when input changes or library loads.
+    }, [jsonInput]); // Re-run when input changes
 
 
     const handleClear = () => {
