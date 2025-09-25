@@ -1,0 +1,5 @@
+{
+  "name": "Draft.js JSON Previewer",
+  "description": "A simple and aesthetic tool to instantly preview the HTML output of a Draft.js raw content state JSON. Paste your JSON into the editor to see the live rendering.",
+  "requestFramePermissions": []
+}
