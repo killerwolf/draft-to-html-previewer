@@ -2,6 +2,14 @@
 
 A simple web tool that converts Draft.js raw content state (JSON) into live HTML preview. Perfect for developers working with Draft.js who need to quickly visualize their editor's content state or debug formatting issues.
 
+![Draft.js JSON Previewer Screenshot](public/assets/image.jpg)
+
+## 🚀 Live Demo
+
+**Try it now!** [**View Live Demo**](https://h4md1.fr/draft-to-html-previewer/) 🌐
+
+---
+
 ## What it does
 
 - **Input**: Paste your Draft.js raw content state JSON
@@ -21,10 +29,6 @@ A simple web tool that converts Draft.js raw content state (JSON) into live HTML
    ```bash
    npm run dev
    ```
-
-## Live Demo
-
-🌐 **[View Live Demo](https://killerwolf.github.io/draft-to-html-previewer/)**
 
 ## Contributing
 

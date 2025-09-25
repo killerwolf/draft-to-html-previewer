@@ -28,9 +28,6 @@ jobs:
       
     - name: Setup Biome
       uses: biomejs/setup-biome@v2
-      with:
-        node-version: 22
-        cache: npm
 
     - name: Run Biome CI
       run: npm run ci
