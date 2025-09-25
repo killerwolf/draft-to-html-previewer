@@ -34,7 +34,7 @@ jobs:
         check-latest: true
         
     - name: Install dependencies
-      run: npm ci
+      run: npm ci --include=optional
       
     - name: Run Biome CI
       run: npm run ci
@@ -55,7 +55,7 @@ jobs:
         check-latest: true
         
     - name: Install dependencies
-      run: npm ci
+      run: npm ci --include=optional
       
     - name: Build
       run: npm run build
