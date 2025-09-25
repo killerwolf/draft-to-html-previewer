@@ -1,20 +1,41 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Draft.js JSON Previewer
 
-# Run and deploy your AI Studio app
+A simple web tool that converts Draft.js raw content state (JSON) into live HTML preview. Perfect for developers working with Draft.js who need to quickly visualize their editor's content state or debug formatting issues.
 
-This contains everything you need to run your app locally.
+## What it does
 
-View your app in AI Studio: https://ai.studio/apps/drive/1zmE97is-MX1wgy3Lo2Zk8sItP5y7vA-i
+- **Input**: Paste your Draft.js raw content state JSON
+- **Output**: Live HTML preview with proper formatting
+- **Features**: Real-time conversion, error handling, sample data included
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
-
+**Prerequisites:** Node.js
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+   ```bash
+   npm install
+   ```
+
+2. Run the app:
+   ```bash
+   npm run dev
+   ```
+
+## Contributing
+
+Found a bug or want to add a feature? Contributions are welcome!
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## Tech Stack
+
+- **React 19** - UI framework
+- **TypeScript** - Type safety
+- **Vite** - Build tool
+- **Tailwind CSS** - Styling
+- **draftjs-to-html** - Draft.js conversion library
