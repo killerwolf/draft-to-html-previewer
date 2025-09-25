@@ -26,7 +26,7 @@ export const EditorPanel: React.FC<EditorPanelProps> = ({
           htmlFor={textareaId}
           className="text-lg font-semibold text-slate-300"
         >
-          Draft.js JSON Input
+          Draft.js JSON Input - Paste Your Content State
         </label>
         <div className="flex items-center space-x-2">
           <button
@@ -54,7 +54,7 @@ export const EditorPanel: React.FC<EditorPanelProps> = ({
           id={textareaId}
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          placeholder="Paste your Draft.js JSON object here..."
+          placeholder="Paste your Draft.js content state JSON here... (e.g., from editorState.getCurrentContent().toJS())"
           className={`w-full h-full flex-grow p-4 bg-transparent text-slate-300 font-mono text-sm resize-none rounded-lg focus:outline-none placeholder-slate-500 ${error ? "border-rose-500/50" : "border-transparent"}`}
           style={{ minHeight: "50vh" }}
           spellCheck="false"

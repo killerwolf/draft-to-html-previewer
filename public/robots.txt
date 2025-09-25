@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://killerwolf.github.io/draft-to-html-previewer/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

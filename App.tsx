@@ -55,18 +55,28 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-slate-900 text-slate-200 font-sans p-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto">
         <Header />
-        <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-          <EditorPanel
-            value={jsonInput}
-            onChange={setJsonInput}
-            onClear={handleClear}
-            onPasteSample={handlePasteSample}
-            error={error}
-          />
-          <PreviewPanel html={htmlOutput} />
-        </div>
+        <main className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          <section aria-label="Draft.js JSON Input Editor">
+            <EditorPanel
+              value={jsonInput}
+              onChange={setJsonInput}
+              onClear={handleClear}
+              onPasteSample={handlePasteSample}
+              error={error}
+            />
+          </section>
+          <section aria-label="HTML Preview Output">
+            <PreviewPanel html={htmlOutput} />
+          </section>
+        </main>
         <footer className="text-center text-slate-500 mt-12 text-sm">
-          <p>Built with React, TypeScript, and Tailwind CSS.</p>
+          <p>
+            Built with React, TypeScript, and Tailwind CSS.
+            <span className="block mt-2">
+              Free online tool for converting Draft.js content state to HTML
+              preview.
+            </span>
+          </p>
         </footer>
       </div>
     </div>

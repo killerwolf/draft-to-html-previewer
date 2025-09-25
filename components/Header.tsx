@@ -7,9 +7,19 @@ export const Header: React.FC = () => {
         Draft.js JSON Previewer
       </h1>
       <p className="mt-3 text-lg text-slate-400 max-w-2xl mx-auto">
-        Instantly visualize your Draft.js raw content state. Paste your JSON in
-        the editor to see a live HTML preview.
+        Free online tool to convert Draft.js raw content state (JSON) to HTML
+        preview. Instantly visualize your Draft.js editor content with live
+        preview. Perfect for developers working with Draft.js, React editors,
+        and content management systems.
       </p>
+      <div className="mt-4 text-sm text-slate-500 max-w-3xl mx-auto">
+        <p>
+          Convert your Draft.js content state to HTML in seconds. No
+          installation required. Supports all Draft.js block types, inline
+          styles, and entities. Ideal for debugging, testing, and visualizing
+          Draft.js content before rendering.
+        </p>
+      </div>
       <div className="mt-4 flex justify-center gap-4">
         <a
           href="https://github.com/killerwolf/draft-to-html-previewer"

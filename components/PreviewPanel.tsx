@@ -25,7 +25,9 @@ export const PreviewPanel: React.FC<PreviewPanelProps> = ({ html }) => {
   return (
     <div className="flex flex-col h-full">
       <div className="flex justify-between items-center mb-2">
-        <h2 className="text-lg font-semibold text-slate-300">HTML Preview</h2>
+        <h2 className="text-lg font-semibold text-slate-300">
+          HTML Preview - Live Output
+        </h2>
         <button
           type="button"
           onClick={handleCopy}
@@ -54,7 +56,12 @@ export const PreviewPanel: React.FC<PreviewPanelProps> = ({ html }) => {
           <div dangerouslySetInnerHTML={{ __html: html }} />
         ) : (
           <div className="flex items-center justify-center h-full text-slate-400">
-            <p>Preview will appear here</p>
+            <div className="text-center">
+              <p className="text-lg font-medium mb-2">HTML Preview Ready</p>
+              <p className="text-sm">
+                Paste your Draft.js JSON to see the converted HTML output
+              </p>
+            </div>
           </div>
         )}
       </div>
