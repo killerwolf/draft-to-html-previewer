@@ -1,4 +1,3 @@
-
 export const SAMPLE_DRAFT_JSON = `{
   "entityMap": {
     "0": {

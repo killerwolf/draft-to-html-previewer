@@ -36,10 +36,30 @@ Found a bug or want to add a feature? Contributions are welcome!
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## Tech Stack
+## Development
+
+### Code Quality
+This project uses [Biome](https://biomejs.dev/) for fast formatting and linting:
+
+```bash
+# Format code
+npm run format
+
+# Lint and fix issues
+npm run lint
+
+# Check everything (format + lint)
+npm run check
+
+# CI check (no fixes, fails on errors)
+npm run ci
+```
+
+### Tech Stack
 
 - **React 19** - UI framework
 - **TypeScript** - Type safety
 - **Vite** - Build tool
 - **Tailwind CSS** - Styling
+- **Biome** - Fast formatter and linter
 - **draftjs-to-html** - Draft.js conversion library
