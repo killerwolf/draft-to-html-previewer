@@ -22,6 +22,10 @@ A simple web tool that converts Draft.js raw content state (JSON) into live HTML
    npm run dev
    ```
 
+## Live Demo
+
+🌐 **[View Live Demo](https://killerwolf.github.io/draft-to-html-previewer/)**
+
 ## Contributing
 
 Found a bug or want to add a feature? Contributions are welcome!

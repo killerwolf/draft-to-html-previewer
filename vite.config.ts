@@ -2,12 +2,18 @@ import path from 'path';
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ mode, command }) => {
     const env = loadEnv(mode, '.', '');
     return {
+      base: '/draft-to-html-previewer/',
       server: {
         port: 3000,
         host: '0.0.0.0',
+      },
+      build: {
+        sourcemap: false,
+        outDir: 'dist',
+        assetsDir: 'assets',
       },
       plugins: [react()],
       define: {
