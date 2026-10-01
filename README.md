@@ -57,6 +57,9 @@ npm run check
 
 # CI check (no fixes, fails on errors)
 npm run ci
+
+# Type-check without emitting output
+npm run typecheck
 ```
 
 ### Tech Stack

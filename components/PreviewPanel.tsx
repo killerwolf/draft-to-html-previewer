@@ -1,5 +1,6 @@
 import type React from "react";
 import { useEffect, useState } from "react";
+import { sanitizeHtml } from "../sanitize";
 import { CheckIcon, CopyIcon } from "./icons";
 
 interface PreviewPanelProps {
@@ -8,6 +9,7 @@ interface PreviewPanelProps {
 
 export const PreviewPanel: React.FC<PreviewPanelProps> = ({ html }) => {
   const [isCopied, setIsCopied] = useState(false);
+  const safeHtml = sanitizeHtml(html);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(html).then(() => {
@@ -51,9 +53,9 @@ export const PreviewPanel: React.FC<PreviewPanelProps> = ({ html }) => {
         className="prose-custom flex-grow bg-white text-slate-800 p-6 rounded-lg shadow-lg border border-slate-200 overflow-auto"
         style={{ minHeight: "50vh" }}
       >
-        {html ? (
-          // biome-ignore lint/security/noDangerouslySetInnerHtml: This is intentional for displaying user-provided HTML content
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+        {safeHtml ? (
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: `safeHtml` is sanitized via DOMPurify with a strict allowlist before rendering
+          <div dangerouslySetInnerHTML={{ __html: safeHtml }} />
         ) : (
           <div className="flex items-center justify-center h-full text-slate-400">
             <div className="text-center">
